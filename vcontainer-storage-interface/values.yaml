@@ -27,6 +27,13 @@ csi:
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
+  snapshotController:
+    image:
+      repository: registry.vngcloud.vn/public/csi-snapshot-controller
+      tag: v4.2.1
+      pullPolicy: IfNotPresent
+    resources: {}
+    extraArgs: {}
   resizer:
     image:
       repository: registry.vngcloud.vn/public/csi-resizer
