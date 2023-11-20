@@ -3,7 +3,7 @@
 # Description: 
 #   - Deploy snapshot controller deployment, this deployment is needed to create, list, delete 
 # snapshots.
-#  - This deployment will be deployed in the same namespace with vcontainer-storage-interface.
+#   - This deployment will be deployed in the same namespace with vcontainer-storage-interface.
 ####################################################################################################
 
 apiVersion: v1
@@ -130,4 +130,3 @@ spec:
             {{- end }}
             {{- end }}
           imagePullPolicy: IfNotPresent
-          
