@@ -108,6 +108,19 @@ spec:
             - mountPath: /var/lib/csi/sockets/pluginproxy/
               name: socket-dir
           resources: {{ toYaml .Values.csi.snapshotter.resources | nindent 12 }}
+        - name: snapshot-controller
+          securityContext:
+            {{- toYaml .Values.csi.plugin.controllerPlugin.securityContext | nindent 12 }}
+          image: "{{ .Values.csi.snapshotController.image.repository }}:{{ .Values.csi.snapshotController.image.tag }}"
+          imagePullPolicy: {{ .Values.csi.snapshotController.image.pullPolicy }}
+          args:
+            - "--v={{ .Values.logVerbosityLevel }}"
+            - "--leader-election=true"
+            {{- if .Values.csi.snapshotController.extraArgs }}
+            {{- with .Values.csi.snapshotController.extraArgs }}
+            {{- tpl . $ | trim | nindent 12 }}
+            {{- end }}
+            {{- end }}
         - name: csi-resizer
           securityContext:
             {{- toYaml .Values.csi.plugin.controllerPlugin.securityContext | nindent 12 }}
