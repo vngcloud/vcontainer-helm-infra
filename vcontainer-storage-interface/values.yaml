@@ -155,6 +155,7 @@ vcontainerConfig:
   portalURL: "https://portal.vngcloud.vn"
   computeURL: "https://compute.vngcloud.vn/v1"
   blockstorageURL: "https://hcm-3.api.vngcloud.vn/vserver/vserver-gateway/v2"
+  vBackUpGateWayURL: "https://hcm-3.api.vngcloud.tech/vbackup-gateway/v1"
   caFile: "/etc/kubernetes/ca-bundle.crt"
   clientID: "<PUT_YOUR_CLIENT_ID>"
   clientSecret: "<PUT_YOUR_CLIENT_SECRET>"
