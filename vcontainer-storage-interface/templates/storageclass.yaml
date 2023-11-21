@@ -2,7 +2,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: vcontainer-storage-interface-delete
+  name: sc-iops-200-delete
   {{- if .Values.storageClass.delete.isDefault }}
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
@@ -16,7 +16,7 @@ allowVolumeExpansion: {{ .Values.storageClass.delete.allowVolumeExpansion }}
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: vcontainer-storage-interface-retain
+  name: sc-nvme-3000-retain
   {{- if .Values.storageClass.retain.isDefault }}
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
@@ -24,6 +24,6 @@ metadata:
 provisioner: csi.vngcloud.vn
 reclaimPolicy: Retain
 parameters:
-  type: vtype-6d30737c-08aa-41f8-8bb1-d486c94ccf69
+  type: vtype-93a22a9f-1ec0-4e61-84fb-75ac181c13dc
 allowVolumeExpansion: {{ .Values.storageClass.retain.allowVolumeExpansion }}
 {{- end }}

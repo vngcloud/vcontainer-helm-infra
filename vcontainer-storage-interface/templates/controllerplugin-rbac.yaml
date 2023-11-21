@@ -65,12 +65,6 @@ rules:
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["list", "watch", "create", "update", "patch"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshots"]
-    verbs: ["get", "list"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshotcontents"]
-    verbs: ["get", "list"]
   - apiGroups: ["coordination.k8s.io"]
     resources: ["leases"]
     verbs: ["get", "watch", "list", "delete", "update", "create"]
@@ -86,49 +80,6 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: vcontainer-csi-provisioner-role
-  apiGroup: rbac.authorization.k8s.io
----
-
-######################################################################################## SNAPSHOTTER
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: vcontainer-csi-snapshotter-role
-rules:
-  - apiGroups: [""]
-    resources: ["events"]
-    verbs: ["list", "watch", "create", "update", "patch"]
-  # Secret permission is optional.
-  # Enable it if your driver needs secret.
-  # For example, `csi.storage.k8s.io/snapshotter-secret-name` is set in VolumeSnapshotClass.
-  # See https://kubernetes-csi.github.io/docs/secrets-and-credentials.html for more details.
-  #  - apiGroups: [""]
-  #    resources: ["secrets"]
-  #    verbs: ["get", "list"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshotclasses"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshotcontents"]
-    verbs: ["create", "get", "list", "watch", "update", "delete", "patch"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshotcontents/status"]
-    verbs: ["update", "patch"]
-  - apiGroups: ["coordination.k8s.io"]
-    resources: ["leases"]
-    verbs: ["get", "watch", "list", "delete", "update", "create"]
----
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: vcontainer-csi-snapshotter-binding
-subjects:
-  - kind: ServiceAccount
-    name: vcontainer-csi-controller-sa
-    namespace: {{ .Release.Namespace }}
-roleRef:
-  kind: ClusterRole
-  name: vcontainer-csi-snapshotter-role
   apiGroup: rbac.authorization.k8s.io
 ---
 
@@ -173,75 +124,4 @@ subjects:
 roleRef:
   kind: ClusterRole
   name: vcontainer-csi-resizer-role
-  apiGroup: rbac.authorization.k8s.io
----
-
-################################################################################ SNAPSHOT CONTROLLER
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: vcontainer-csi-snapshot-controller-role
-rules:
-  - apiGroups: [""]
-    resources: ["persistentvolumes"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["persistentvolumeclaims"]
-    verbs: ["get", "list", "watch", "update"]
-  - apiGroups: ["storage.k8s.io"]
-    resources: ["storageclasses"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: [""]
-    resources: ["events"]
-    verbs: ["list", "watch", "create", "update", "patch"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshotclasses"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshotcontents"]
-    verbs: ["create", "get", "list", "watch", "update", "delete"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshots"]
-    verbs: ["get", "list", "watch", "update"]
-  - apiGroups: ["snapshot.storage.k8s.io"]
-    resources: ["volumesnapshots/status"]
-    verbs: ["update"]
----
-
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: vcontainer-snapshot-controller-binding
-subjects:
-  - kind: ServiceAccount
-    name: vcontainer-csi-controller-sa
-    namespace: {{ .Release.Namespace }}
-roleRef:
-  kind: ClusterRole
-  name: vcontainer-csi-snapshot-controller-role
-  apiGroup: rbac.authorization.k8s.io
----
-
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: vcontainer-snapshot-controller-leaderelection-role
-  namespace: {{ .Release.Namespace }}
-rules:
-- apiGroups: ["coordination.k8s.io"]
-  resources: ["leases"]
-  verbs: ["get", "watch", "list", "delete", "update", "create"]
----
-
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: vcontainer-snapshot-controller-leaderelection-binding
-  namespace: {{ .Release.Namespace }}
-subjects:
-  - kind: ServiceAccount
-    name: vcontainer-csi-controller-sa
-roleRef:
-  kind: Role
-  name: vcontainer-snapshot-controller-leaderelection-role
   apiGroup: rbac.authorization.k8s.io

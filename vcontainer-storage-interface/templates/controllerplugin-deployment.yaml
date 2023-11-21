@@ -86,41 +86,6 @@ spec:
             - name: socket-dir
               mountPath: /var/lib/csi/sockets/pluginproxy/
           resources: {{ toYaml .Values.csi.provisioner.resources | nindent 12 }}
-        - name: csi-snapshotter
-          securityContext:
-            {{- toYaml .Values.csi.plugin.controllerPlugin.securityContext | nindent 12 }}
-          image: "{{ .Values.csi.snapshotter.image.repository }}:{{ .Values.csi.snapshotter.image.tag }}"
-          imagePullPolicy: {{ .Values.csi.snapshotter.image.pullPolicy }}
-          args:
-            - "-v={{ .Values.logVerbosityLevel }}"
-            - "--csi-address=$(ADDRESS)"
-            - "--timeout={{ .Values.timeout }}"
-            - "--leader-election=true"
-            {{- if .Values.csi.snapshotter.extraArgs }}
-            {{- with .Values.csi.snapshotter.extraArgs }}
-            {{- tpl . $ | trim | nindent 12 }}
-            {{- end }}
-            {{- end }}
-          env:
-            - name: ADDRESS
-              value: /var/lib/csi/sockets/pluginproxy/csi.sock
-          volumeMounts:
-            - mountPath: /var/lib/csi/sockets/pluginproxy/
-              name: socket-dir
-          resources: {{ toYaml .Values.csi.snapshotter.resources | nindent 12 }}
-        - name: snapshot-controller
-          securityContext:
-            {{- toYaml .Values.csi.plugin.controllerPlugin.securityContext | nindent 12 }}
-          image: "{{ .Values.csi.snapshotController.image.repository }}:{{ .Values.csi.snapshotController.image.tag }}"
-          imagePullPolicy: {{ .Values.csi.snapshotController.image.pullPolicy }}
-          args:
-            - "--v={{ .Values.logVerbosityLevel }}"
-            - "--leader-election=true"
-            {{- if .Values.csi.snapshotController.extraArgs }}
-            {{- with .Values.csi.snapshotController.extraArgs }}
-            {{- tpl . $ | trim | nindent 12 }}
-            {{- end }}
-            {{- end }}
         - name: csi-resizer
           securityContext:
             {{- toYaml .Values.csi.plugin.controllerPlugin.securityContext | nindent 12 }}
