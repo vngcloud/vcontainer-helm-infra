@@ -101,7 +101,7 @@ spec:
             - name: CSI_ENDPOINT
               value: unix://csi/csi.sock
             - name: VCONTAINER_CONFIG
-              value: /etc/config/{{ .Values.vcontainerConfig.filename }}
+              value: /etc/config/vcontainer-csi-config.conf
           ports:
             - containerPort: 9808
               name: healthz
@@ -151,7 +151,7 @@ spec:
             type: Directory
         - name: vcontainer-config
           secret:
-            secretName: {{ .Values.vcontainerConfig.name }}
+            secretName: vcontainer-csi-config-secret
         {{- with .Values.csi.plugin.volumes }}
           {{- toYaml . | nindent 8 }}
         {{- end }}
