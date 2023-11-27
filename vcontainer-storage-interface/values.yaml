@@ -16,7 +16,7 @@ csi:
     topology: "true"
     image:
       repository: registry.vngcloud.vn/public/csi-provisioner
-      tag: v3.4.1
+      tag: v3.6.2
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
