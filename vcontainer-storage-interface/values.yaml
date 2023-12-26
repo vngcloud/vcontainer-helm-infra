@@ -144,13 +144,13 @@ csi:
 # Log verbosity level.
 # See https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging.md
 # for description of individual verbosity levels.
-logVerbosityLevel: 2
+logVerbosityLevel: 5
 
 
 vcontainerConfig:
   create: true
-  identityURL: "https://hcm-3.api.vngcloud.tech/iam/accounts-api"
-  vserverURL: "https://hcm-3.api.vngcloud.tech/new-vserver-gateway"
+  identityURL: "https://iamapis.vngcloud.vn/accounts-api"
+  vserverURL: "https://hcm-3.api.vngcloud.vn/vserver/vserver-gateway"
   clientID: "<PUT_YOUR_CLIENT_ID>"
   clientSecret: "<PUT_YOUR_CLIENT_SECRET>"
 

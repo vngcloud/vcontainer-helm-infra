@@ -22,10 +22,6 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      hostAliases:
-      - ip: "120.138.66.140"
-        hostnames:
-        - "hcm-3.api.vngcloud.tech"
       serviceAccount: vcontainer-csi-node-sa
       hostNetwork: true
       containers:
@@ -76,10 +72,6 @@ spec:
               mountPath: /csi
           resources: {{ toYaml .Values.csi.livenessprobe.resources | nindent 12 }}
         - name: vcontainer-storage-interface
-          hostAliases:
-            - ip: "120.138.66.140"
-              hostnames:
-              - "hcm-3.api.vngcloud.tech"
           securityContext:
             privileged: true
             capabilities:

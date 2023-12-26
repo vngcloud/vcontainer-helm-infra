@@ -30,10 +30,6 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      hostAliases:
-      - ip: "120.138.66.140"
-        hostnames:
-        - "hcm-3.api.vngcloud.tech"
       serviceAccount: vcontainer-csi-controller-sa
       securityContext:
         {{- toYaml .Values.csi.plugin.controllerPlugin.podSecurityContext | nindent 8 }}
