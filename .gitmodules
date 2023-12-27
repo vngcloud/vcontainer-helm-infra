@@ -1,3 +1,0 @@
-[submodule "src/vcontainer-storage-interface"]
-	path = src/vcontainer-storage-interface
-	url = https://github.com/vngcloud/vcontainer-storage-interface
