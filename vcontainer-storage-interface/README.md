@@ -3,12 +3,11 @@
 ![prod-env](https://badgen.net/badge/PRODUCTION/environment/blue?icon=github)
 <hr>
 
-# 1. Installation
-## 1.1. Prerequisites
+# Prerequisites
 - Helm 3.0+
 - `KUBECONFIG` environment variable pointing to the `.kubeconfig` file with access to your Kubernetes cluster.
 
-## 1.2. Install `vcontainer-storage-interface` on Kubernetes
+# Install `vcontainer-storage-interface` on Kubernetes
 - Following the below steps to install `vcontainer-storage-interface` on your Kubernetes cluster:
   - **Step 1**: Add the `vcontainer-helm-infra` Helm repository:
     ```
@@ -23,4 +22,3 @@
       --set vcontainerConfig.clientID=<PUT_YOUR_CLIENT_ID> \
       --set vcontainerConfig.clientSecret=<PUT_YOUR_CLIENT_SECRET>
     ```
-
