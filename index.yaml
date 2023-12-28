@@ -3,15 +3,15 @@ entries:
   vcontainer-storage-interface:
   - apiVersion: v2
     appVersion: v0.1.1
-    created: "2023-12-27T16:03:56.236634727+07:00"
+    created: "2023-12-28T09:05:06.169975652+07:00"
     description: vContainer CSI plugin for Kubernetes
-    digest: 63295e26f10394391cb007d4cdadecebb09cbd4998b5aa8b9a400f80f5b5e1f0
+    digest: 1941a2d65700cc653515db849e17603aad1505ab3589330c907a716173160af2
     maintainers:
-    - email: cuongdm3@vng.com.vn
-      name: Cuong. Duong Manh
+    - email: support@vngcloud.vn
+      name: VNG Cloud
     name: vcontainer-storage-interface
     type: application
     urls:
-    - vcontainer-storage-interface/vcontainer-storage-interface-0.0.1.tgz
-    version: 0.0.1
-generated: "2023-12-27T16:03:56.235880498+07:00"
+    - vcontainer-storage-interface/vcontainer-storage-interface-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-12-28T09:05:06.169330476+07:00"
