@@ -105,10 +105,10 @@ logVerbosityLevel: 5
 # Specify settings with the same key as the CCM config: https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/using-openstack-cloud-controller-manager.md#config-openstack-cloud-controller-manager
 cloudConfig:
   global:
-  networking:
-  loadBalancer:
-  blockStorage:
-  metadata:
+    identity-url: "https://iamapis.vngcloud.vn/accounts-api"
+    vserverURL: "https://hcm-3.api.vngcloud.vn/vserver"
+    clientID: "<PUT_YOUR_CLIENT_ID>"
+    clientSecret: "<PUT_YOUR_CLIENT_SECRET>"
 
 # Allow for specifying internal IP addresses for multiple hostnames
 # hostAliases:

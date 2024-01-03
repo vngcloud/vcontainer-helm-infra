@@ -53,26 +53,6 @@ Create cloud-config makro.
 {{- range $key, $value := .Values.cloudConfig.global }}
 {{ $key }} = {{ $value | quote }}
 {{- end }}
-
-[Networking]
-{{- range $key, $value := .Values.cloudConfig.networking }}
-{{ $key }} = {{ $value | quote }}
-{{- end }}
-
-[LoadBalancer]
-{{- range $key, $value := .Values.cloudConfig.loadBalancer }}
-{{ $key }} = {{ $value | quote }}
-{{- end }}
-
-[BlockStorage]
-{{- range $key, $value := .Values.cloudConfig.blockStorage }}
-{{ $key }} = {{ $value | quote }}
-{{- end }}
-
-[Metadata]
-{{- range $key, $value := .Values.cloudConfig.metadata }}
-{{ $key }} = {{ $value | quote }}
-{{- end }}
 {{- end }}
 
 
