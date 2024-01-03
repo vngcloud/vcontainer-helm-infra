@@ -17,4 +17,5 @@ spec:
     protocol: TCP
   selector:
     {{- include "vconCcm.controllermanager.matchLabels" . | nindent 4 }}
+---
 {{- end }}
