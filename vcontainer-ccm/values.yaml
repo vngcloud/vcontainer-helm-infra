@@ -16,7 +16,7 @@ imagePullSecrets: []
 
 # Image repository name and tag
 image:
-  repository: quay./cuongdm8499/vcontainer-ccm
+  repository: quay.io/cuongdm8499/vcontainer-ccm
   tag: "v0.0.0"
   pullPolicy: IfNotPresent
 
@@ -106,7 +106,7 @@ logVerbosityLevel: 5
 # Specify settings with the same key as the CCM config: https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/using-openstack-cloud-controller-manager.md#config-openstack-cloud-controller-manager
 cloudConfig:
   global:
-    identity-url: "https://iamapis.vngcloud.vn/accounts-api"
+    identityURL: "https://iamapis.vngcloud.vn/accounts-api"
     vserverURL: "https://hcm-3.api.vngcloud.vn/vserver"
     clientID: "<PUT_YOUR_CLIENT_ID>"
     clientSecret: "<PUT_YOUR_CLIENT_SECRET>"

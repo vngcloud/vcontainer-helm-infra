@@ -50,9 +50,10 @@ Create cloud-config makro.
 */}}
 {{- define "cloudConfig" -}}
 [Global]
-{{- range $key, $value := .Values.cloudConfig.global }}
-{{ $key }} = {{ $value | quote }}
-{{- end }}
+identity-url = {{ .Values.cloudConfig.global.identityURL | quote }}
+vserver-url = {{ .Values.cloudConfig.global.vserverURL | quote }}
+client-id = {{ .Values.cloudConfig.global.clientID | quote}}
+client-secret = {{ .Values.cloudConfig.global.clientSecret | quote }}
 {{- end }}
 
 
