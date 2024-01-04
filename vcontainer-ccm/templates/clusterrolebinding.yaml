@@ -14,5 +14,3 @@ subjects:
 - kind: ServiceAccount
   name: {{ .Values.serviceAccountName }}
   namespace: {{ .Release.Namespace | quote }}
----
-  

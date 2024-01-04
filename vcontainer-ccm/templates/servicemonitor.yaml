@@ -22,5 +22,4 @@ spec:
   selector:
     matchLabels:
       {{- include "vconCcm.controllermanager.matchLabels" . | nindent 6 }}
----
 {{- end }}
