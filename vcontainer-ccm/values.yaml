@@ -71,11 +71,11 @@ podSecurityContext:
 # List of controllers should be enabled.
 # Use '*' to enable all controllers.
 # Prefix a controller with '-' to disable it.
-enabledControllers:
-  - cloud-node
-  - cloud-node-lifecycle
-  - route
-  - service
+enabledControllers: []
+  # - cloud-node
+  # - cloud-node-lifecycle
+  # - route
+  # - service
 
 # Any extra arguments for openstack-cloud-controller-manager
 controllerExtraArgs: {}
