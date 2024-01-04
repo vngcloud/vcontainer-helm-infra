@@ -48,8 +48,7 @@ livenessProbe: {}
 readinessProbe: {}
 
 # Set nodeSelector where the controller should run, i.e. controlplane nodes
-nodeSelector:
-  node-role.kubernetes.io/control-plane: ""
+nodeSelector: {}
 
 # Set tolerations for nodes where the controller should run, i.e. node
 # should be uninitialized, controlplane...
