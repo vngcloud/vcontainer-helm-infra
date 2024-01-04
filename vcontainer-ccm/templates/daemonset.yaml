@@ -51,13 +51,13 @@ spec:
           image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
-            - /bin/k8s-ccm
+            - /bin/vcontainer-ccm
             - --v={{ .Values.logVerbosityLevel }}
             - --cloud-config=$(CLOUD_CONFIG)
             - --cluster-name=$(CLUSTER_NAME)
-            - --cloud-provider=openstack
+            - --cloud-provider=vngcloud
             - --use-service-account-credentials=true
-            # - --controllers={{- trimAll "," (include "vconCcm.enabledControllers" . ) -}}
+            - --controllers={{- trimAll "," (include "vconCcm.enabledControllers" . ) -}}
             {{- if .Values.serviceMonitor.enabled }}
             - --bind-address=0.0.0.0
             {{- else }}
