@@ -59,6 +59,9 @@ tolerations:
     effect: NoSchedule
   - key: node-role.kubernetes.io/control-plane
     effect: NoSchedule
+  - key: node-role.kubernetes.io/master
+    operator: Exists
+    effect: NoSchedule
 
 # Set security settings for the controller pods
 # For all available options, see https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.23/#podsecuritycontext-v1-core
