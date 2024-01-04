@@ -18,7 +18,7 @@ imagePullSecrets: []
 image:
   repository: quay.io/cuongdm8499/vcontainer-ccm
   tag: "v0.0.0"
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 # Additional containers which are run before the app containers are started.
 extraInitContainers: []
