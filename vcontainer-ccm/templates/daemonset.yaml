@@ -55,9 +55,9 @@ spec:
             - --v={{ .Values.logVerbosityLevel }}
             - --cloud-config=$(CLOUD_CONFIG)
             - --cluster-name=$(CLUSTER_NAME)
-            - --cloud-provider=vngcloud
+            - --cloud-provider=openstack
             - --use-service-account-credentials=true
-            - --controllers={{- trimAll "," (include "vconCcm.enabledControllers" . ) -}}
+            # - --controllers={{- trimAll "," (include "vconCcm.enabledControllers" . ) -}}
             {{- if .Values.serviceMonitor.enabled }}
             - --bind-address=0.0.0.0
             {{- else }}
