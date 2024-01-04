@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: DaemonSet
+kind: Deployment
 metadata:
   name: {{ include "vconCcm.name" . }}
   namespace: {{ .Release.Namespace }}
@@ -10,6 +10,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
     {{- end }}
 spec:
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       {{- include "vconCcm.controllermanager.matchLabels" . | nindent 6 }}
@@ -125,4 +126,5 @@ spec:
       {{- if .Values.extraVolumes }}
         {{ toYaml .Values.extraVolumes | nindent 6 }}
       {{- end }}
+      affinity: {{ toYaml .Values.affinity | nindent 8 }}
 

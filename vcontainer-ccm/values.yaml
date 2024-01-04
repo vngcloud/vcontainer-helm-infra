@@ -103,6 +103,8 @@ secret:
 # for description of individual verbosity levels.
 logVerbosityLevel: 5
 
+replicaCount: 1
+
 # Specify settings with the same key as the CCM config: https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/using-openstack-cloud-controller-manager.md#config-openstack-cloud-controller-manager
 cloudConfig:
   global:
@@ -140,6 +142,14 @@ extraVolumeMounts: []
   # - name: k8s-certs
   #   mountPath: /etc/kubernetes/pki
   #   readOnly: true
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: node-role.kubernetes.io/master
+          operator: DoesNotExist
 
 # cluster name that used for created cluster
 cluster:
