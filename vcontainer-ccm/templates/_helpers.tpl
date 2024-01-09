@@ -58,6 +58,9 @@ client-secret = {{ .Values.cloudConfig.global.clientSecret | quote }}
 [VLB]
 default-l4-package-id = {{ .Values.cloudConfig.vlb.defaultL4PackageID | quote }}
 default-listener-allowed-cidrs = {{ .Values.cloudConfig.vlb.defaultListenerAllowedCIRDs| quote }}
+default-idle-timeout-client = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutClient | quote }}
+default-idle-timeout-member = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutMember | quote }}
+default-idle-timeout-connection = {{ .Values.cloudConfig.vlb.DefaultIdleTimeoutConnection | quote }}
 {{- end }}
 
 
