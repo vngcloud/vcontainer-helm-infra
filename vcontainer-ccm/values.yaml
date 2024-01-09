@@ -115,6 +115,7 @@ cloudConfig:
 
   vlb:
     defaultL4PackageID: "lbp-96b6b072-aadb-4b58-9d5f-c16ad69d36aa"
+    defaultListenerAllowedCIRDs: "0.0.0.0/0"
 
 # Allow for specifying internal IP addresses for multiple hostnames
 # hostAliases:

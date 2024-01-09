@@ -57,6 +57,7 @@ client-secret = {{ .Values.cloudConfig.global.clientSecret | quote }}
 
 [VLB]
 default-l4-package-id = {{ .Values.cloudConfig.vlb.defaultL4PackageID | quote }}
+default-listener-allowed-cidrs = {{ .Values.cloudConfig.vlb.defaultListenerAllowedCIRDs| quote }}
 {{- end }}
 
 
