@@ -105,7 +105,7 @@ logVerbosityLevel: 5
 
 replicaCount: 1
 
-# Specify settings with the same key as the CCM config: https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/using-openstack-cloud-controller-manager.md#config-openstack-cloud-controller-manager
+# These will be used to create loadbalancer, listener, pool, monitor and member resources
 cloudConfig:
   global:
     identityURL: "https://iamapis.vngcloud.vn/accounts-api"
@@ -119,6 +119,20 @@ cloudConfig:
     defaultIdleTimeoutClient: 50
     defaultIdleTimeoutMember: 50
     defaultIdleTimeoutConnection: 5
+    defaultPoolAlgorithm: "round-robin"
+    defaultPoolProtocol: "tcp"
+    defaultMonitorProtocol: "tcp"
+    defaultMonitorHealthyThreshold: 3
+    defaultMonitorUnhealthyThreshold: 3
+    defaultMonitorTimeout: 5
+    defaultMonitorInterval: 50
+    defaultMonitorHTTPMethod: "get"
+    defaultMonitorHTTPPath: "/"
+    defaultMonitorHTTPSuccessCode: 200
+    defaultMonitorHttpVersion: "1.0"
+    defaultMonitorHttpDomainName: ""
+
+
     
 # Allow for specifying internal IP addresses for multiple hostnames
 # hostAliases:

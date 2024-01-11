@@ -60,7 +60,19 @@ default-l4-package-id = {{ .Values.cloudConfig.vlb.defaultL4PackageID | quote }}
 default-listener-allowed-cidrs = {{ .Values.cloudConfig.vlb.defaultListenerAllowedCIRDs| quote }}
 default-idle-timeout-client = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutClient | quote }}
 default-idle-timeout-member = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutMember | quote }}
-default-idle-timeout-connection = {{ .Values.cloudConfig.vlb.DefaultIdleTimeoutConnection | quote }}
+default-idle-timeout-connection = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutConnection | quote }}
+default-pool-algorithm = {{ .Values.cloudConfig.vlb.defaultPoolAlgorithm | quote }}
+default-pool-protocol = {{ .Values.cloudConfig.vlb.defaultPoolProtocol | quote }}
+default-monitor-protocol = {{ .Values.cloudConfig.vlb.defaultMonitorProtocol | quote }}
+default-monitor-healthy-threshold = {{ .Values.cloudConfig.vlb.defaultMonitorHealthyThreshold | quote }}
+default-monitor-unhealthy-threshold = {{ .Values.cloudConfig.vlb.defaultMonitorUnhealthyThreshold | quote }}
+default-monitor-timeout = {{ .Values.cloudConfig.vlb.defaultMonitorTimeout | quote }}
+default-monitor-interval = {{ .Values.cloudConfig.vlb.defaultMonitorInterval | quote }}
+default-monitor-http-method = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPMethod | quote }}
+default-monitor-http-path = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPPath | quote }}
+default-monitor-http-success-code = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPSuccessCode | quote }}
+default-monitor-http-version = {{ .Values.cloudConfig.vlb.defaultMonitorHttpVersion | quote }}
+default-monitor-http-domain-name = {{ .Values.cloudConfig.vlb.defaultMonitorHttpDomainName | quote }}
 {{- end }}
 
 
