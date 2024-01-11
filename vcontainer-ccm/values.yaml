@@ -16,7 +16,7 @@ imagePullSecrets: []
 
 # Image repository name and tag
 image:
-  repository: quay.io/cuongdm8499/vcontainer-ccm
+  repository: vcr.vngcloud.vn/60108-cuongdm3/vcontainer-ccm
   tag: "v0.0.0"
   pullPolicy: IfNotPresent
 
