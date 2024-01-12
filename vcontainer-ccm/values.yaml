@@ -120,7 +120,6 @@ cloudConfig:
     defaultIdleTimeoutMember: 50
     defaultIdleTimeoutConnection: 5
     defaultPoolAlgorithm: "round-robin"
-    defaultPoolProtocol: "tcp"
     defaultMonitorProtocol: "tcp"
     defaultMonitorHealthyThreshold: 3
     defaultMonitorUnhealthyThreshold: 3

@@ -62,7 +62,6 @@ default-idle-timeout-client = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutClien
 default-idle-timeout-member = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutMember | quote }}
 default-idle-timeout-connection = {{ .Values.cloudConfig.vlb.defaultIdleTimeoutConnection | quote }}
 default-pool-algorithm = {{ .Values.cloudConfig.vlb.defaultPoolAlgorithm | quote }}
-default-pool-protocol = {{ .Values.cloudConfig.vlb.defaultPoolProtocol | quote }}
 default-monitor-protocol = {{ .Values.cloudConfig.vlb.defaultMonitorProtocol | quote }}
 default-monitor-healthy-threshold = {{ .Values.cloudConfig.vlb.defaultMonitorHealthyThreshold | quote }}
 default-monitor-unhealthy-threshold = {{ .Values.cloudConfig.vlb.defaultMonitorUnhealthyThreshold | quote }}
