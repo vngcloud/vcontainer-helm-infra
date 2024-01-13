@@ -7,7 +7,7 @@ timeout: 3m
 csi:
   attacher:
     image:
-      repository: registry.vngcloud.vn/public/csi-attacher
+      repository: vcr.vngcloud.vn/81-vks-public/csi-attacher
       tag: v4.4.2
       pullPolicy: IfNotPresent
     resources: {}
@@ -15,35 +15,35 @@ csi:
   provisioner:
     topology: "true"
     image:
-      repository: registry.vngcloud.vn/public/csi-provisioner
+      repository: vcr.vngcloud.vn/81-vks-public/csi-provisioner
       tag: v3.6.2
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
   snapshotter:
     image:
-      repository: registry.vngcloud.vn/public/csi-snapshotter
+      repository: vcr.vngcloud.vn/81-vks-public/csi-snapshotter
       tag: v6.2.1
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
   snapshotController:
     image:
-      repository: registry.vngcloud.vn/public/csi-snapshot-controller
+      repository: vcr.vngcloud.vn/81-vks-public/csi-snapshot-controller
       tag: v4.2.1
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
   resizer:
     image:
-      repository: registry.vngcloud.vn/public/csi-resizer
+      repository: vcr.vngcloud.vn/81-vks-public/csi-resizer
       tag: v1.8.0
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
   livenessprobe:
     image:
-      repository: registry.vngcloud.vn/public/csi-livenessprobe
+      repository: vcr.vngcloud.vn/81-vks-public/csi-livenessprobe
       tag: v2.9.0
       pullPolicy: IfNotPresent
     failureThreshold: 5
@@ -54,14 +54,14 @@ csi:
     extraArgs: {}
   nodeDriverRegistrar:
     image:
-      repository: registry.vngcloud.vn/public/csi-node-driver-registrar
+      repository: vcr.vngcloud.vn/81-vks-public/csi-node-driver-registrar
       tag: v2.6.2
       pullPolicy: IfNotPresent
     resources: {}
     extraArgs: {}
   plugin:
     image:
-      repository: registry.vngcloud.vn/public/vcontainer-storage-interface
+      repository: vcr.vngcloud.vn/81-vks-public/vcontainer-storage-interface
       pullPolicy: IfNotPresent
       tag: # defaults to .Chart.AppVersion
     volumes:
