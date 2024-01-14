@@ -66,6 +66,11 @@ default-monitor-healthy-threshold = {{ .Values.cloudConfig.vlb.defaultMonitorHea
 default-monitor-unhealthy-threshold = {{ .Values.cloudConfig.vlb.defaultMonitorUnhealthyThreshold | quote }}
 default-monitor-timeout = {{ .Values.cloudConfig.vlb.defaultMonitorTimeout | quote }}
 default-monitor-interval = {{ .Values.cloudConfig.vlb.defaultMonitorInterval | quote }}
+default-monitor-http-method = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPMethod | quote }}
+default-monitor-http-path = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPPath | quote }}
+default-monitor-http-success-code = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPSuccessCode | quote }}
+default-monitor-http-version = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPVersion | quote }}
+default-monitor-http-domain-name = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPDomainName | quote }}
 {{- end }}
 
 

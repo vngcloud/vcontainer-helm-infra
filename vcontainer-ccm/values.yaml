@@ -124,6 +124,11 @@ cloudConfig:
     defaultMonitorUnhealthyThreshold: 3
     defaultMonitorTimeout: 5
     defaultMonitorInterval: 50
+    defaultMonitorHttpMethod: "get"
+    defaultMonitorHttpPath: "/"
+    defaultMonitorHttpSuccessCode: "200"
+    defaultMonitorHttpVersion: "1.0"
+    defaultMonitorHttpDomainName: ""
 
 
     
