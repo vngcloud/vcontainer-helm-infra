@@ -71,6 +71,7 @@ default-monitor-http-path = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPPath | 
 default-monitor-http-success-code = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPSuccessCode | quote }}
 default-monitor-http-version = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPVersion | quote }}
 default-monitor-http-domain-name = {{ .Values.cloudConfig.vlb.defaultMonitorHTTPDomainName | quote }}
+default-monitor-protocol = {{ .Values.cloudConfig.vlb.defaultMonitorProtocol | quote }}
 {{- end }}
 
 

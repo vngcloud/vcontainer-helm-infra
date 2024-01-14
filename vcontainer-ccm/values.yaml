@@ -129,6 +129,7 @@ cloudConfig:
     defaultMonitorHttpSuccessCode: "200"
     defaultMonitorHttpVersion: "1.0"
     defaultMonitorHttpDomainName: ""
+    defaultMonitorProtocol: "tcp"
 
 
     
