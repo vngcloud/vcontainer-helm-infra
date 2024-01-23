@@ -3,7 +3,20 @@ entries:
   vcontainer-storage-interface:
   - apiVersion: v2
     appVersion: v0.1.3
-    created: "2024-01-13T16:17:16.776518942+07:00"
+    created: "2024-01-23T11:08:25.030674701+07:00"
+    description: vContainer CSI plugin for Kubernetes
+    digest: a01f2e76de37acca65361c214720c070db75180dcd66e9a0fd26640cc4cea760
+    maintainers:
+    - email: support@vngcloud.vn
+      name: VNG Cloud
+    name: vcontainer-storage-interface
+    type: application
+    urls:
+    - vcontainer-storage-interface/vcontainer-storage-interface-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: v0.1.3
+    created: "2024-01-23T11:08:25.030147666+07:00"
     description: vContainer CSI plugin for Kubernetes
     digest: 3e6dba9313af715aeffe86785101670de1459cce321c1c630bc5ea8f21eb9898
     maintainers:
@@ -16,7 +29,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: v0.1.2
-    created: "2024-01-13T16:17:16.775677693+07:00"
+    created: "2024-01-23T11:08:25.029635102+07:00"
     description: vContainer CSI plugin for Kubernetes
     digest: 4f94b59495d55e978dda57107e80fa9b8b0d7c79e0319e1f9d6e97df6778a0ec
     maintainers:
@@ -29,7 +42,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: v0.1.1
-    created: "2024-01-13T16:17:16.77506379+07:00"
+    created: "2024-01-23T11:08:25.029029425+07:00"
     description: vContainer CSI plugin for Kubernetes
     digest: 1941a2d65700cc653515db849e17603aad1505ab3589330c907a716173160af2
     maintainers:
@@ -40,4 +53,4 @@ entries:
     urls:
     - vcontainer-storage-interface/vcontainer-storage-interface-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-13T16:17:16.774334131+07:00"
+generated: "2024-01-23T11:08:25.028304121+07:00"
