@@ -46,11 +46,11 @@ spec:
       {{- end }}
       serviceAccountName: {{ .Values.serviceAccountName }}
       containers:
-        - name: vcontainer-ccm
+        - name: vngcloud-controller-manager
           image: "{{ .Values.image.repository }}:{{ default .Chart.AppVersion .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
-            - /bin/vcontainer-ccm
+            - /bin/vngcloud-controller-manager
             - --v={{ .Values.logVerbosityLevel }}
             - --cloud-config=$(CLOUD_CONFIG)
             - --cluster-name=$(CLUSTER_NAME)
@@ -101,7 +101,7 @@ spec:
             - name: CLOUD_CONFIG
               value: /etc/config/vcontainer-ccm.conf
             - name: CLUSTER_NAME
-              value: {{ .Values.cluster.name }}
+              value: {{ .Values.cluster.clusterID }}
             {{- if .Values.extraEnv }}
               {{- toYaml .Values.extraEnv | nindent 12 }}
             {{- end }}

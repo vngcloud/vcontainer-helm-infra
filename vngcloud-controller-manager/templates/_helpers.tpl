@@ -72,8 +72,12 @@ default-monitor-http-success-code = {{ .Values.cloudConfig.vlb.defaultMonitorHtt
 default-monitor-http-version = {{ .Values.cloudConfig.vlb.defaultMonitorHttpVersion | quote }}
 default-monitor-http-domain-name = {{ .Values.cloudConfig.vlb.defaultMonitorHttpDomainName | quote }}
 default-monitor-protocol = {{ .Values.cloudConfig.vlb.defaultMonitorProtocol | quote }}
-{{- end }}
 
+{{- if .Chart.Version }}
+[Metadata]
+chart-version = {{ .Chart.Version | quote }}
+{{- end }}
+{{- end -}}
 
 {{/*
 Generate string of enabled controllers. Might have a trailing comma (,) which needs to be trimmed.

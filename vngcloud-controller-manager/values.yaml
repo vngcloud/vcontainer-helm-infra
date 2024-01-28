@@ -1,4 +1,4 @@
-# Values vContainer-CCM Helm Chart
+# Values VngCloud Controller Manager Helm Chart
 #
 # Define deployment mode for the controller and provide cloud credentials in cloudConfig at the end of the file
 #
@@ -16,8 +16,8 @@ imagePullSecrets: []
 
 # Image repository name and tag
 image:
-  repository: vcr.vngcloud.vn/60108-cuongdm3/vcontainer-ccm
-  tag: "v0.0.0"
+  repository: vcr.vngcloud.vn/public/vngcloud-controller-manager
+  tag: "v0.1.0"
   pullPolicy: IfNotPresent
 
 # Additional containers which are run before the app containers are started.
@@ -28,7 +28,7 @@ extraInitContainers: []
 
 # Additional environment variables for the cloud-controller-manager.
 extraEnv: []
-# - name: OS_CCM_REGIONAL
+# - name: VNGCLOUD_CCM_REGIONAL
 #   value: "true"
 
 # Set resources for Kubernetes daemonset
@@ -96,7 +96,7 @@ serviceMonitor: {}
 secret:
   enabled: true
   create: true
-  name: vcontainer-ccm-config
+  name: vngcloud-controller-manager-config
 
 # Log verbosity level.
 # See https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/logging.md
@@ -132,18 +132,11 @@ cloudConfig:
     defaultMonitorProtocol: "tcp"
 
 
-    
-# Allow for specifying internal IP addresses for multiple hostnames
-# hostAliases:
-#   - ip: "10.0.0.1"
-#     hostnames:
-#     - "keystone.hostname.com"
-
 ## Pod priority settings
 ## ref: https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/
 priorityClassName:
 
-# The following three volumes are required to use all OCCM controllers,
+# The following three volumes are required to use all the controllers,
 # but might not be needed if you just use a specific controller
 # Additional volumes that should be available to the pods:
 extraVolumes: []
@@ -173,8 +166,8 @@ affinity:
 
 # cluster name that used for created cluster
 cluster:
-  name: kubernetes
+  clusterID: "<PUT_YOUR_CLUSTER_ID>"
 
-clusterRoleName: system:vcontainer-cloud-controller-manager
+clusterRoleName: system:vngcloud-controller-manager
 
-serviceAccountName: vcontainer-cloud-controller-manager
+serviceAccountName: vngcloud-controller-manager

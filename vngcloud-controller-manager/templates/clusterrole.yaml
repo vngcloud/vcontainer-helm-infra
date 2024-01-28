@@ -1,9 +1,3 @@
-####################################################################################################
-# Author: Cuong. Duong Manh <cuongdm8499@gmail.com>
-# Description:
-#   - TODO
-####################################################################################################
-
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
