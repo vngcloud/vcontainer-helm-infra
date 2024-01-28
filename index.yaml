@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  vcontainer-ccm:
+  - apiVersion: v2
+    appVersion: v0.0.1
+    created: "2024-01-03T17:09:41.010796978+07:00"
+    description: vContainer cloud controller manager plugin for Kubernetes
+    digest: 26d1f93c4e2379236426b65e398d6cb8862bc8f6ea06f1cfe0e24ca9e4f030a7
+    maintainers:
+    - email: cuongdm3@vng.com.vn
+      name: Cuong. Duong Manh
+    name: vcontainer-ccm
+    type: application
+    urls:
+    - vcontainer-ccm-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-01-03T17:09:41.01022908+07:00"

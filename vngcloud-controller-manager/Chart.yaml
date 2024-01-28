@@ -1,0 +1,9 @@
+apiVersion: v2
+appVersion: v0.1.0
+version: 0.1.0
+name: vngcloud-controller-manager
+description: VngCloud Controller Manager plugin for Kubernetes
+type: application
+maintainers:
+  - name: Cuong. Duong Manh
+    email: cuongdm3@vng.com.vn
